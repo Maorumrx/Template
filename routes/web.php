@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\MasterData\Tableline;
 use App\Http\Livewire\MasterData\Announcement;
 use App\Http\Livewire\Dashboard\Dashboard;
+use App\Http\Controllers\Homecontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
+Route::get('announce_file/{key}', Homecontroller::class)->middleware('auth')->name('announce_file');
 
 Route::middleware([
     'auth:sanctum',
