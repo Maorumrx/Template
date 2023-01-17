@@ -144,20 +144,30 @@ class Announcement extends Component
             $stmt->save();
             $id = $stmt->announcement_id;
             if ($this->image_file) {
-                $file_path_info = 'announcement';
+                
+                $file_path_info = 'postfile/'.Carbon::now()->format('Y').'/'.Carbon::now()->format('m');
                 try {
-                    if ($this->image_file) {
-                        $file = $this->image_file;
+                    foreach ($this->post_file as $item):
+                        $file = $item;
+                        $file_name = $file->hashName();       
                         $file_type = $file->getClientOriginalExtension();
                         $file_size = $file->getSize();
-                        $filename = $this->image_file->hashName();
-                        $file_path = $file_path_info . '/' . $filename;
+                        $file_path = $file_path_info.'/'.$file_name;
                         $condit_1 = $file->getClientOriginalName();
-                        $img = Image::make($file);
-                        Storage::put($file_path, (string) $img->encode());
-                    } else {
-                        $filename = $this->image_file_url;
-                    }
+                        // $img = Image::make($file);
+
+                        Storage::put($file_path_info, $file);
+                        $attach = new Attachment;
+                        $attach->object_type = 'POST';
+                        $attach->object_id = $this->post_id;
+                        $attach->file_name = $file_name;
+                        $attach->file_type = $file_type;
+                        $attach->file_size = $file_size;
+                        $attach->file_path = $file_path;
+                        $attach->condit_1 = $condit_1;
+                        $attach->created_by = Auth::User()->id;
+                        $attach->save();
+                    endforeach;
                     $attac = Attachment::where('object_id', $id)
                         ->where('object_type', 'ANNOUNCEMENT')
                         ->delete();
