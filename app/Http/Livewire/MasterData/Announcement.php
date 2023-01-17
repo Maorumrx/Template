@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Artisan;
 use File;
 use Image;
-use DB;
-use Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Announcement extends Component
 {
@@ -145,21 +145,20 @@ class Announcement extends Component
             $id = $stmt->announcement_id;
             if ($this->image_file) {
                 
-                $file_path_info = 'postfile/'.Carbon::now()->format('Y').'/'.Carbon::now()->format('m');
+                $file_path_info = 'announcement/'.Carbon::now()->format('Y').'/'.Carbon::now()->format('m');
                 try {
-                    foreach ($this->post_file as $item):
+                    foreach ($this->image_file as $item):
                         $file = $item;
                         $file_name = $file->hashName();       
                         $file_type = $file->getClientOriginalExtension();
                         $file_size = $file->getSize();
                         $file_path = $file_path_info.'/'.$file_name;
                         $condit_1 = $file->getClientOriginalName();
-                        // $img = Image::make($file);
 
                         Storage::put($file_path_info, $file);
                         $attach = new Attachment;
-                        $attach->object_type = 'POST';
-                        $attach->object_id = $this->post_id;
+                        $attach->object_type = 'ANNOUNCEMENT';
+                        $attach->object_id = $id;
                         $attach->file_name = $file_name;
                         $attach->file_type = $file_type;
                         $attach->file_size = $file_size;
@@ -168,22 +167,22 @@ class Announcement extends Component
                         $attach->created_by = Auth::User()->id;
                         $attach->save();
                     endforeach;
-                    $attac = Attachment::where('object_id', $id)
-                        ->where('object_type', 'ANNOUNCEMENT')
-                        ->delete();
-                    $attac = new Attachment([
-                        'object_id' => $id,
-                        'object_type' => 'ANNOUNCEMENT',
-                        'file_name' => $filename,
-                        'file_type' => $file_type,
-                        'file_size' => $file_size,
-                        'file_path' => $file_path,
-                        'condit_1' => $condit_1,
-                    ]);
-                    $attac->save();
+                    // $attac = Attachment::where('object_id', $id)
+                    //     ->where('object_type', 'ANNOUNCEMENT')
+                    //     ->delete();
+                    // $attac = new Attachment([
+                    //     'object_id' => $id,
+                    //     'object_type' => 'ANNOUNCEMENT',
+                    //     'file_name' => $file_name,
+                    //     'file_type' => $file_type,
+                    //     'file_size' => $file_size,
+                    //     'file_path' => $file_path,
+                    //     'condit_1' => $condit_1,
+                    // ]);
+                    // $attac->save();
                     DB::commit();
                 } catch (\Throwable $th) {
-                    Storage::delete($file_path_info . '/' . $filename);
+                    Storage::delete($file_path_info . '/' . $file_name);
 
                     session()->flash('error', $th.'error updated.');
                     $this->dispatchBrowserEvent(
@@ -227,10 +226,10 @@ class Announcement extends Component
         $this->active = $stmt->active;
         $this->audits = $stmt->audits;
 
-        // $attc = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->first();
-        // if ($attc) {
-        //     $this->image_file_url = $attc->file_name;
-        // }
+        $attc = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->first();
+        if ($attc) {
+            $this->image_file_url = $attc->file_name;
+        }
         $this->loadData();
         $this->isEdit();
     }
