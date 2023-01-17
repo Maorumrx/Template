@@ -143,8 +143,9 @@ class Announcement extends Component
             ]);
             $stmt->save();
             $id = $stmt->announcement_id;
+            dd($this->image_file);
             if ($this->image_file) {
-                
+
                 $file_path_info = 'announcement';
                 try {
                     foreach ($this->image_file as $item):

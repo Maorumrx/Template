@@ -64,7 +64,7 @@
                 @if ($item->file_type == 'mp4')
                     <div class="flex flex-wrap w-1/3">
                         <div class="w-full p-1 md:p-2">
-                        <video autoplay loop muted class="block object-cover object-center w-full h-full rounded-lg transition duration-150 ease-out hover:scale-125 " >
+                        <video controls class="block object-cover object-center w-full h-full rounded-lg transition duration-150 ease-out hover:scale-125 " >
                             <source src="{{asset("announce_file/$item->file_name")}}" type="video/mp4"/>
                         </video>
                         </div>
