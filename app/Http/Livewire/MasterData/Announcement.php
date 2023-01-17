@@ -15,18 +15,6 @@ use Image;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-// use Illuminate\Support\Facades\Storage;
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\File;
-// use Illuminate\Support\Facades\Response;
-// use Illuminate\Support\Facades\Cache;
-// use Barryvdh\Debugbar\Facades\Debugbar;
-// use App\Models\User;
-
-// use Illuminate\Support\Carbon;
-// use Illuminate\Support\Facades\DB;
-// use Illuminate\Support\Facades\Auth;
-
 class Announcement extends Component
 {
     use AuthorizesRequests, WithFileUploads;
@@ -41,7 +29,7 @@ class Announcement extends Component
     $flag, $active;
 
     // Image
-    public $image_file, $image_file_url;
+    public $image_file, $image_file_url, $gallery = [];
     public $inputFile = [], $attachfile = [], $file_id, $condit_2;
 
     // Rule
@@ -157,7 +145,7 @@ class Announcement extends Component
             $id = $stmt->announcement_id;
             if ($this->image_file) {
                 
-                $file_path_info = 'announcement/'.Carbon::now()->format('Y').'/'.Carbon::now()->format('m');
+                $file_path_info = 'announcement';
                 try {
                     foreach ($this->image_file as $item):
                         $file = $item;
@@ -237,11 +225,11 @@ class Announcement extends Component
         $this->flag = $stmt->flag;
         $this->active = $stmt->active;
         $this->audits = $stmt->audits;
-
-        $attc = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->first();
-        if ($attc) {
-            $this->image_file_url = $attc->file_name;
-        }
+        // $attc = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->first();
+        // if ($attc) {
+        //     $this->image_file_url = $attc->file_name;
+        // }
+        $this->gallery = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->orderby('file_type','desc')->get();
         $this->loadData();
         $this->isEdit();
     }

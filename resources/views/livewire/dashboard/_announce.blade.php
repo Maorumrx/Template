@@ -25,7 +25,7 @@
                 <tbody>
                         @forelse ($announcement as $item)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <td scope="row" class="px-4 py-3 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">
+                            <td scope="row" class="px-2 py-4 font-medium w-20 text-center text-gray-900 whitespace-nowrap dark:text-white">
                                 @if ($item->flag == 0)
                                   
                                 @else

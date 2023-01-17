@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
-Route::get('announce_file/{key}', Homecontroller::class)->middleware('auth')->name('announce_file');
+Route::get('announce_file/{key}', [Homecontroller::class, 'announcement'])->middleware('auth')->name('announce_file');
 
 Route::middleware([
     'auth:sanctum',
