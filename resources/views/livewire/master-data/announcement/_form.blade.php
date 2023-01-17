@@ -44,9 +44,9 @@
                 <div class="overflow-hidden shadow sm:rounded-md">
                     <div class="px-4 py-5 space-y-6 bg-white sm:p-6 dark:bg-neutral-800">
                         <div class="grid grid-cols-4 gap-4">
-                            <div class="col-span-4 mt-2 sm:col-span-2">
+                            <div class="col-span-4 mt-2 sm:col-span-4">
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-700">รูปรถยนต์</label>
+                                    <label class="block text-sm font-medium text-gray-900 dark:text-neutral-300">รูปภาพ</label>
                                     <label for="file-upload" class="cursor-pointer">
                                         <div class="flex justify-center px-6 pt-5 pb-6 mt-1 border-2 border-gray-300 border-dashed rounded-md">
                                             <div class="space-y-1 text-center">
@@ -62,11 +62,11 @@
                                                         {{-- focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500
                                                         focus-within:ring-offset-2
                                                         hover:text-indigo-500 sr-only--}}
-                                                        <span>Upload a file</span>
+                                                        <span class="px-2 py-4  ">Upload a file</span>
                                                         <input id="file-upload" wire:model="image_file" name="file-upload" type="file" class="sr-only"
-                                                            accept="image/jpeg, image/png">
+                                                            accept="">
                                                     </label>
-                                                    <p class="pl-1">Vehicle</p>
+                                                    <p class="pl-1 dark:text-neutral-400">Even</p>
                                                 </div>
                                                 <p class="text-xs text-gray-500">PNG, JPG up to 10MB</p>
                                             </div>
