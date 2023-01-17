@@ -184,6 +184,8 @@ class Announcement extends Component
                     DB::commit();
                 } catch (\Throwable $th) {
                     Storage::delete($file_path_info . '/' . $filename);
+
+                    session()->flash('error', $th.'error updated.');
                     $this->dispatchBrowserEvent(
                         'toast',
                         [
