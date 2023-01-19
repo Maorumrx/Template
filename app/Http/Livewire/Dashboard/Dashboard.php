@@ -27,7 +27,7 @@ class Dashboard extends Component
         $flag, $active;
 
     // Image
-    public $image_file, $image_file_url;
+    public $image_file, $image_file_url, $gallery = [];
     public $inputFile = [], $attachfile = [], $file_id, $condit_2;
 
     public $editid, $action;
@@ -69,6 +69,9 @@ class Dashboard extends Component
         $stmt = Announcement::find($id);
         $this->announcement_header = $stmt->announcement_header;
         $this->announcement_desc = $stmt->announcement_desc;
+        $this->flag = $stmt->flag;
+        $this->gallery = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->orderby('file_type', 'desc')->get();
+        // dd($this->gallery);
         $this->isEdit();
     }
 }

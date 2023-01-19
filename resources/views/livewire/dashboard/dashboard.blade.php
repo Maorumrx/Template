@@ -6,6 +6,9 @@
                 <div class="flex justify-between w-full pb-2 flex-nowrap">
                     <div>
                         {{-- Left --}}
+                        @if($isForm)
+                            <h3 class=" px-4 py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">วัดโนนสำราญ</h3>
+                        @endif
                     </div>
                     <div>
                         {{-- Center --}}
