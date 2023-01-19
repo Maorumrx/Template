@@ -26,14 +26,20 @@
                 <div x-data="{ open: false }">
                     <div x-show="!$wire.isForm" style="@if($isForm) display: none; @endif">
                         {{-- Announce --}}
-                        @include('livewire.dashboard._announce')
+                        <x-jet-welcome />
+                        <div class="pt-5">
+                            
+                            @include('livewire.dashboard._announce')
+                        </div>
                     </div>
                 </div>
 
                 <div x-data="{ open: false }">
                     <div x-show="$wire.isForm" style="@if(!$isForm) display: none; @endif">
                         {{-- Form --}}
-                        @include('livewire.dashboard._announcedetail')
+                        <div class="pt-5">
+                            @include('livewire.dashboard._announcedetail')
+                        </div>
                     </div>
                 </div>
 
