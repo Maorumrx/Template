@@ -1,4 +1,5 @@
 <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <h3 class=" px-4 py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">ข่าวสารและกิจกรรม</h3>
     <div class="overflow-hidden bg-white dark:bg-gray-700 sm:rounded-lg ">
         {{-- <x-jet-welcome /> --}}
         <div class="relative overflow-x-auto">

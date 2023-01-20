@@ -143,6 +143,10 @@ class Announcement extends Component
             ]);
             $stmt->save();
             $id = $stmt->announcement_id;
+<<<<<<< HEAD
+=======
+            // dd($this->image_file);
+>>>>>>> 58768f291fd3e24ceea2cdd0b189fc4e6aab8fc3
             if ($this->image_file) {
 
                 $file_path_info = 'announcement';
@@ -197,18 +201,20 @@ class Announcement extends Component
             }
             DB::commit();
             $this->edit($id);
-            session()->flash('success', 'Successfully updated.');
-            $this->dispatchBrowserEvent('toast', 
-            [
-                'toast_type' => 'success',
-                'toast_msg' => 'บันทึกข้อมูลสำเร็จ',
-            ]);
+            toastr()->success('Data has been saved successfully!', 'Congrats');
+            // session()->flash('success', 'Successfully updated.');
+            // $this->dispatchBrowserEvent('toast', 
+            // [
+            //     'toast_type' => 'success',
+            //     'toast_msg' => 'บันทึกข้อมูลสำเร็จ',
+            // ]);
         } catch (\Throwable $th) {
-            $this->dispatchBrowserEvent('toast', 
-            [
-                'toast_type' => 'error',
-                'toast_msg' => $th->getmessage(),
-            ]);
+            toastr()->error('Oops! Something went wrong!');
+            // $this->dispatchBrowserEvent('toast', 
+            // [
+            //     'toast_type' => 'error',
+            //     'toast_msg' => $th->getmessage(),
+            // ]);
             DB::rollBack();
         }
     }
