@@ -143,10 +143,6 @@ class Announcement extends Component
             ]);
             $stmt->save();
             $id = $stmt->announcement_id;
-<<<<<<< HEAD
-=======
-            // dd($this->image_file);
->>>>>>> 58768f291fd3e24ceea2cdd0b189fc4e6aab8fc3
             if ($this->image_file) {
 
                 $file_path_info = 'announcement';
