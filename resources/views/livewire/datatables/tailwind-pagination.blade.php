@@ -1,4 +1,4 @@
-<div class="flex overflow-hidden border border-gray-300 divide-x divide-gray-300 rounded pagination">
+<div class="flex overflow-hidden border border-gray-300 rounded pagination">
     <!-- Previous Page Link -->
     @if ($paginator->onFirstPage())
     <button class="relative inline-flex items-center px-2 py-2 text-sm font-medium leading-5 text-gray-500 bg-white"
@@ -13,7 +13,7 @@
     </button>
     @endif
 
-    <div class="divide-x divide-gray-300">
+    <div class="">
         @foreach ($elements as $element)
         @if (is_string($element))
         <button class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium leading-5 text-gray-700 bg-white" disabled>

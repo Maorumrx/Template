@@ -1,17 +1,17 @@
 <div>
     @includeIf($beforeTableSlot)
-    <div class="relative">
-        <div class="flex items-center justify-between mb-1">
+    <div class="relative ">
+        <div class="flex items-center justify-between mb-1 ">
             <div class="flex items-center h-10">
                 @if($this->searchableColumns()->count())
-                    <div class="flex rounded-lg shadow-sm w-auto">
+                    <div class="flex w-auto rounded-lg shadow-sm">
                         <div class="relative flex-grow focus-within:z-10">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg class="w-5 h-5 text-gray-400" viewBox="0 0 20 20" stroke="currentColor" fill="none">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </div>
-                            <div class="text-yellow-400 hover:bg-gray-200 bg-gray-50"></div>
+                            <div class="text-yellow-400 bg-red-400 bg-blue-400 hover:bg-gray-200 bg-gray-50 dark:text-green-500 dark:border-green-400 dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-700"></div>
                             <input wire:model.debounce.500ms="search" class="block w-full py-3 pl-10 text-sm leading-4 border-gray-300 rounded-md shadow-sm dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-700 focus:border-blue-300 focus:ring-0 focus:outline-none" placeholder="{{__('Search ')}} 
                                 {{-- {{ $this->searchableColumns()->map->label->join(', ') }} --}}
                                 "type="text" />
@@ -29,7 +29,7 @@
                 <span class="text-xl text-blue-400 uppercase">@lang('Filter active')</span>
             @endif
 
-            <div class="flex flex-wrap items-center space-x-1">
+            <div class="flex flex-wrap items-center space-x-1 ">
                 <x-icons.cog wire:loading class="text-gray-400 h-9 w-9 animate-spin" />
 
                 @if($this->activeFilters)
@@ -99,19 +99,18 @@
                 @endforeach
             </div>
         @endif
-
-        <div wire:loading.class="opacity-50" class="rounded-lg @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-lg bg-white dark:bg-neutral-600 max-w-screen overflow-x-scroll border-2 @if($this->activeFilters) border-blue-500 @else border-transparent @endif @if($complex) rounded-b-none border-b-0 @endif">
+        <div wire:loading.class="opacity-100 " class="rounded-lg dark:bg-neutral-700  @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-lg max-w-screen scrollbar-hide overflow-x-scroll @if($this->activeFilters) border-blue-500 dark:border-neutral-700 @else border-transparent @endif @if($complex) rounded-b-none @endif">
             <div>
-                <div class="table min-w-full align-middle">
+                <div class="table min-w-full align-middle ">
                     @unless($this->hideHeader)
-                        <div class="table-row divide-x divide-gray-200 dark:divide-neutral-500">
+                        <div class="table-row">
                             @foreach($this->columns as $index => $column)
                                 @if($hideable === 'inline')
                                     @include('datatables::header-inline-hide', ['column' => $column, 'sort' => $sort])
                                 @elseif($column['type'] === 'checkbox')
                                     @unless($column['hidden'])
-                                        <div class="flex justify-center table-cell w-32 h-12 px-6 py-4 overflow-hidden text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase align-top border-b border-gray-200 bg-gray-50 focus:outline-none">
-                                            <div class="px-3 py-1 rounded @if(count($selected)) bg-orange-400 @else bg-gray-200 @endif text-white text-center">
+                                        <div class="flex justify-center table-cell w-32 h-12 px-6 py-4 overflow-hidden text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase align-top bg-gray-50 focus:outline-none dark:bg-neutral-700 dark:border-neutral-700">
+                                            <div class="px-3 py-1 rounded @if(count($selected)) bg-orange-400 @else bg-gray-200 dark:bg-neutral-500 @endif text-white text-center ">
                                                 {{ count($visibleSelected) }}
                                             </div>
                                         </div>
@@ -122,7 +121,7 @@
                             @endforeach
                         </div>
                     @endunless
-                    <div class="table-row bg-blue-100 divide-x divide-blue-200">
+                    <div class="table-row ">
                         @foreach($this->columns as $index => $column)
                             @if($column['hidden'])
                                 @if($hideable === 'inline')
@@ -171,7 +170,6 @@
                             @endforeach
                         </div>
                     @endforeach
-
                     @if ($this->hasSummaryRow())
                         <div class="table-row p-1">
                             @foreach($this->columns as $column)
@@ -190,12 +188,11 @@
                 </div>
             </div>
             @if($this->results->isEmpty())
-                <p class="p-3 text-lg text-center dark:text-neutral-300">
+                <p class="p-3 text-lg text-center dark:text-neutral-300 ">
                     {{ __("There's Nothing to show at the moment") }}
                 </p>
             @endif
         </div>
-
         @unless($this->hidePagination)
             <div class="max-w-screen bg-white dark:bg-neutral-700 @unless($complex) rounded-b-lg @endunless border-4 border-t-0 border-b-0 @if($this->activeFilters) border-blue-500 @else border-transparent @endif">
                 <div class="items-center justify-between p-2 sm:flex">
@@ -229,13 +226,12 @@
             </div>
         @endif
     </div>
-
     @if($complex)
-        <div class="bg-gray-50 px-4 py-4 rounded-b-lg rounded-t-none shadow-lg border-2 @if($this->activeFilters) border-blue-500 @else border-transparent @endif @if($complex) border-t-0 @endif">
+        <div class="bg-gray-50 dark:bg-neutral-700 px-4 py-4 rounded-b-lg rounded-t-none shadow-lg border-2 @if($this->activeFilters) border-blue-500 @else border-transparent @endif @if($complex) border-t-0 @endif">
             <livewire:complex-query :columns="$this->complexColumns" :persistKey="$this->persistKey" :savedQueries="method_exists($this, 'getSavedQueries') ? $this->getSavedQueries() : null" />
         </div>
     @endif
 
     @includeIf($afterTableSlot)
-    <span class="hidden text-sm leading-5 text-left text-center text-right text-gray-900 bg-gray-100 bg-yellow-100 bg-gray-50"></span>
+    <span class="hidden text-sm leading-5 text-left text-center text-right text-gray-900 bg-gray-100 bg-yellow-100 bg-gray-50 "></span>
 </div>

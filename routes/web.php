@@ -18,7 +18,7 @@ use App\Http\Controllers\Homecontroller;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
 Route::get('announce_file/{key}', [Homecontroller::class, 'announcement'])->middleware('auth')->name('announce_file');

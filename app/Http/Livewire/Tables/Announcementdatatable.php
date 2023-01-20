@@ -51,9 +51,9 @@ class Announcementdatatable extends LivewireDatatable
             Column::callback(['active'],function($active){
                 $res = '';
                 if($active == 1){
-                    $res = '<button class="px-2 py-1 text-sm text-blue-500 border border-blue-400 rounded-md"> active</button>';
+                    $res = '<button class="px-2 py-1 text-sm text-white bg-blue-400 rounded-md"> active</button>';
                 }else{
-                    $res = '<button class="px-2 py-1 text-sm text-red-500 border border-red-400 rounded-md"> inactive </button>';
+                    $res = '<button class="px-2 py-1 text-sm text-white bg-red-400 rounded-md"> inactive </button>';
                 }
                 return $res;
             })
@@ -63,6 +63,7 @@ class Announcementdatatable extends LivewireDatatable
                 return view('livewire.datatables.table-actions', ['id' => $id]);
             })
             ->unsortable()
+            ->alignCenter()
             ->label('จัดการ')
         ];
     }
