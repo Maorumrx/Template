@@ -143,7 +143,6 @@ class Announcement extends Component
             ]);
             $stmt->save();
             $id = $stmt->announcement_id;
-            dd($this->image_file);
             if ($this->image_file) {
 
                 $file_path_info = 'announcement';
@@ -227,7 +226,7 @@ class Announcement extends Component
         $this->active = $stmt->active;
         $this->audits = $stmt->audits;
         // $attc = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->first();
-        // if ($attc) {
+        // if ($attc) {                
         //     $this->image_file_url = $attc->file_name;
         // }
         $this->gallery = $stmt->attachment()->where('object_type', 'ANNOUNCEMENT')->orderby('file_type','desc')->get();
