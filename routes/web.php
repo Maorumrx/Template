@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\MasterData\Tableline;
+use App\Http\Livewire\MasterData\Announcement;
+use App\Http\Livewire\Dashboard\Dashboard;
+use App\Http\Controllers\Homecontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +18,10 @@ use App\Http\Livewire\MasterData\Tableline;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
-
+Route::get('/dashboard', Dashboard::class)->name('dashboard');
+Route::get('announce_file/{key}', [Homecontroller::class, 'announcement'])->middleware('auth')->name('announce_file');
 
 Route::middleware([
     'auth:sanctum',
@@ -25,7 +29,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('tableline', Tableline::class)->middleware('auth')->name('tableline');
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('announcement', Announcement::class)->middleware('auth')->name('announcement');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
 });

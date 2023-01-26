@@ -1,5 +1,5 @@
 <div wire:click.prefetch="toggle('{{ $index }}')"
-     class="@if($column['hidden']) relative table-cell h-12 w-3 bg-blue-100 hover:bg-blue-300 overflow-none align-top group @else hidden @endif"
+     class="@if($column['hidden']) relative table-cell h-12 w-3 bg-blue-100 hover:bg-blue-300 dark:bg-neutral-700 overflow-none align-top group @else hidden @endif"
      style="min-width:12px; max-width:12px"
      >
      <button class="relative w-3 h-12 focus:outline-none">
@@ -17,7 +17,7 @@
 
     @if($column['sortable'])
         <button wire:click="sort('{{ $index }}')"
-                class="flex items-center justify-between w-full h-full px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50 focus:outline-none">
+                class="flex items-center justify-between w-full h-full px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase bg-gray-50 dark:bg-neutral-700 focus:outline-none">
             <span class="inline flex-grow @if($column['headerAlign'] === 'right') text-right @elseif($column['headerAlign'] === 'center') text-center @endif"">{{ str_replace('_', ' ', $column['label']) }}</span>
             <span class="inline text-xs text-blue-400">
             @if($sort === $index)
@@ -30,7 +30,7 @@
             </span>
         </button>
     @else
-        <div class="flex items-center justify-between w-full h-full px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50 focus:outline-none">
+        <div class="flex items-center justify-between w-full h-full px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase bg-gray-50 focus:outline-none dark:bg-neutral-700">
             <span class="inline flex-grow @if($column['headerAlign'] === 'right') text-right @elseif($column['headerAlign'] === 'center') text-center @endif"">{{ str_replace('_', ' ', $column['label']) }}</span>
         </div>
     @endif
@@ -38,7 +38,7 @@
     @if ($column['hideable'])
         <button wire:click.prefetch="toggle('{{ $index }}')"
                 class="absolute bottom-1 right-1 focus:outline-none">
-            <x-icons.arrow-circle-left class="w-3 h-3 text-gray-300 hover:text-blue-400" />
+            <x-icons.arrow-circle-left class="w-3 h-3 text-gray-300 hover:text-blue-400 " />
         </button>
     @endif
 </div>

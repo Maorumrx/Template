@@ -1,11 +1,12 @@
 <div class="p-6 bg-white border-b border-gray-200 sm:px-20 dark:bg-neutral-800 dark:border-neutral-600">
     <div class="mt-8 text-2xl dark:text-neutral-300">
-        LOGO
+        {{-- LOGO --}}
         {{-- <x-jet-application-logo class="block w-auto h-12 dark:text-neutral-300" /> --}}
     </div>
 
     <div class="mt-8 text-2xl dark:text-neutral-300">
-        Welcome to your Jetstream application!
+        {{-- Welcome to your Jetstream application! --}}
+        ประวัติวัดโนนสำราญ
     </div>
 
     <div class="mt-6 text-gray-500 dark:text-neutral-400">
