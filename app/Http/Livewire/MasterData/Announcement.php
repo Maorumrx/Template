@@ -117,7 +117,7 @@ class Announcement extends Component
         $this->object_type = null;
         $this->announcement_header = null;
         $this->announcement_desc = null;
-        $this->flag = 1;
+        $this->flag = null;
         $this->active = 1;
         $this->editid = null;
 

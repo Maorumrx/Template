@@ -19,7 +19,7 @@ class Dashboard extends Component
     use AuthorizesRequests, WithFileUploads;
     public $isOpen = 0;
     public $isDelete = 0;
-    public $isForm, $form_style, $isCreate, $announcement,
+    public $isForm, $form_style, $isCreate, $announcement, $directory,
         $isEdit, $showtable, $header_text, $delete_id, $audits;
 
     // Announcement
@@ -31,14 +31,18 @@ class Dashboard extends Component
     public $inputFile = [], $attachfile = [], $file_id, $condit_2;
 
     public $editid, $action;
-    protected $listeners = ['edit', 'openDeleteModal'];
+    protected $listeners = ['directory', 'openDeleteModal'];
     protected $queryString = ['editid', 'action'];
 
     public function mount()
     {
         $this->header_text = "";
         // $this->showtable = true;
-        $this->announcement = Announcement::query()->where('active',1)->get();
+        $this->announcement = Announcement::query()
+            ->where('active',1)
+            ->orderby('flag','desc')
+            ->orderby('created_at','desc')
+            ->get();
     }
 
     public function render()
@@ -54,6 +58,12 @@ class Dashboard extends Component
         $this->isForm = true;
     }
 
+    public function directory()
+    {
+        $this->directory = true;
+        $this->isForm = false;
+    }
+
     public function back()
     {
         $this->isForm = false;
@@ -65,7 +75,6 @@ class Dashboard extends Component
 
     public function detail($id)
     {
-
         $stmt = Announcement::find($id);
         $this->announcement_header = $stmt->announcement_header;
         $this->announcement_desc = $stmt->announcement_desc;
