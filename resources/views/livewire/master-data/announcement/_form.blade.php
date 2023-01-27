@@ -98,8 +98,8 @@
 <section class="overflow-hidden text-gray-700 ">
     
     <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-        <label class="text-sm font-medium text-gray-900 dark:text-neutral-300">ภาพวีดีโอตัวอย่าง </label>
-        <div class="flex flex-wrap -m-1 md:-m-2">
+        <label class="py-2 text-sm font-medium text-gray-900 dark:text-neutral-300">ภาพวีดีโอตัวอย่าง </label>
+        <div class="flex flex-wrap ">
             
             @foreach ($gallery as $item)
                 {{-- {{dd($gallery)}} --}}
@@ -119,8 +119,8 @@
 
 <section class="overflow-hidden text-gray-700 ">
     <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-        <label class="text-sm font-medium text-gray-900 dark:text-neutral-300">ภาพตัวอย่าง </label>
-        <div class="flex flex-wrap -m-1 md:-m-2">
+        <label class="py-2 text-sm font-medium text-gray-900 dark:text-neutral-300">ภาพตัวอย่าง </label>
+        <div class="flex flex-wrap">
             @foreach ($gallery as $item)
                 {{-- {{dd($gallery)}} --}}
                 @if ($item->file_type != 'mp4')

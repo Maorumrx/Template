@@ -99,7 +99,7 @@
                 @endforeach
             </div>
         @endif
-        <div wire:loading.class="opacity-100 " class="rounded-lg dark:bg-neutral-700  @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-lg max-w-screen scrollbar-hide overflow-x-scroll @if($this->activeFilters) border-blue-500 dark:border-neutral-700 @else border-transparent @endif @if($complex) rounded-b-none @endif">
+        <div wire:loading.class="opacity-100 " class="rounded-lg dark:bg-neutral-600  @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-lg max-w-screen scrollbar-hide overflow-x-scroll @if($this->activeFilters) border-blue-500 dark:border-neutral-700 @else border-transparent @endif @if($complex) rounded-b-none @endif">
             <div>
                 <div class="table min-w-full align-middle ">
                     @unless($this->hideHeader)

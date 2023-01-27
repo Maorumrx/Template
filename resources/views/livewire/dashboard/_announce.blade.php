@@ -3,7 +3,7 @@
     <div class="overflow-hidden bg-white dark:bg-gray-700 sm:rounded-lg ">
         {{-- <x-jet-welcome /> --}}
         
-        <div class="relative overflow-x-auto md:overflow-scroll h-48 max-w-screen scrollbar-hide">
+        <div class="relative h-48 overflow-x-auto bg-white md:overflow-scroll max-w-screen scrollbar-hide dark:bg-neutral-900">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
                     <tr>
@@ -54,7 +54,7 @@
                     </tr>
                     @empty
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <td colspan="3" class="px-6 py-4 ">
+                        <td colspan="3" class="px-6 py-4 text-center">
                             ไม่พบข้อมูล
                         </td>
                     </tr>
