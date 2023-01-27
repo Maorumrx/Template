@@ -41,7 +41,7 @@
                                                             {{-- focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500
                                                             focus-within:ring-offset-2
                                                             hover:text-indigo-500 sr-only--}}
-                                                            <span class="px-2 py-4  ">Upload a file</span>
+                                                            <span class="px-2 py-4 ">Upload a file</span>
                                                             <input id="file-upload" wire:model="image_file" name="file-upload" type="file" class="sr-only"
                                                                 multiple enctype="multipart/fprm-data" accept="">
                                                         </label>
@@ -58,13 +58,13 @@
                                 </div>
                             </div>
                             <div class="col-span-4 mt-2 sm:col-span-2">
-                                <label class="block text-sm font-medium text-gray-900 dark:text-neutral-300 ">หัวข้อ <span class="text-red-500">*</span></label>
+                                <label class="block text-sm font-medium text-gray-900 dark:text-neutral-300 required">หัวข้อ </label>
                                 <input type="text" wire:model="announcement_header"
                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                                 @error('announcement_header') <span class="text-red-500 error-message">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-span-4 mt-2 sm:col-span-2">
-                                <label class="block text-sm font-medium text-gray-900 dark:text-neutral-300 ">รายละเอียด <span class="text-red-500">*</span></label>
+                                <label class="block text-sm font-medium text-gray-900 dark:text-neutral-300 ">รายละเอียด</label>
                                 <textarea rows="3" wire:model.defer="announcement_desc"
                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     placeholder="">
@@ -98,7 +98,7 @@
 <section class="overflow-hidden text-gray-700 ">
     
     <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-        <label class=" text-sm font-medium text-gray-900 dark:text-neutral-300 ">ภาพวีดีโอตัวอย่าง </label>
+        <label class="text-sm font-medium text-gray-900 dark:text-neutral-300">ภาพวีดีโอตัวอย่าง </label>
         <div class="flex flex-wrap -m-1 md:-m-2">
             
             @foreach ($gallery as $item)
@@ -119,7 +119,7 @@
 
 <section class="overflow-hidden text-gray-700 ">
     <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-        <label class=" text-sm font-medium text-gray-900 dark:text-neutral-300 ">ภาพตัวอย่าง </label>
+        <label class="text-sm font-medium text-gray-900 dark:text-neutral-300">ภาพตัวอย่าง </label>
         <div class="flex flex-wrap -m-1 md:-m-2">
             @foreach ($gallery as $item)
                 {{-- {{dd($gallery)}} --}}
