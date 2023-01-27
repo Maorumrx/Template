@@ -11,7 +11,7 @@
                 {{ session('status') }}
             </div>
         @endif
-
+            
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -34,7 +34,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('register'))
-                    <a class="text-sm text-gray-600 underline hover:text-gray-900" href="{{ route('register') }}">
+                    <a class="text-sm text-gray-600 underline hover:text-gray-900 dark:text-neutral-300" href="{{ route('register') }}">
                         {{ __('Registered ?') }}
                     </a>
                 @endif

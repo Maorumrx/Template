@@ -22,14 +22,21 @@
                         @endif
                     </div>
                 </div>
-
+                
                 <div x-data="{ open: false }">
                     <div x-show="!$wire.isForm" style="@if($isForm) display: none; @endif">
                         {{-- Announce --}}
                         <x-jet-welcome />
+                        
                         <div class="pt-5">
-                            
                             @include('livewire.dashboard._announce')
+                        </div>
+                        
+                        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 pt-5">
+                            <h3 id="directory" class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">ทำเนียบ</h3>
+                            <div class="mt-2 text-sm text-gray-500 dark:text-neutral-400">
+                                Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,7 +49,6 @@
                         </div>
                     </div>
                 </div>
-
                 {{--
             </div> --}}
             {{-- </div> --}}
