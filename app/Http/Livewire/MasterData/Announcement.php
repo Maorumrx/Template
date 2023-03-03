@@ -117,7 +117,7 @@ class Announcement extends Component
         $this->object_type = null;
         $this->announcement_header = null;
         $this->announcement_desc = null;
-        $this->flag = null;
+        $this->flag = 0;
         $this->active = 1;
         $this->editid = null;
 
@@ -205,7 +205,7 @@ class Announcement extends Component
             //     'toast_msg' => 'บันทึกข้อมูลสำเร็จ',
             // ]);
         } catch (\Throwable $th) {
-            toastr()->error('Oops! Something went wrong!');
+            toastr()->error($th .'Oops! Something went wrong!');
             // $this->dispatchBrowserEvent('toast', 
             // [
             //     'toast_type' => 'error',

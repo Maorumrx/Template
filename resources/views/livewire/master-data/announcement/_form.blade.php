@@ -72,7 +72,7 @@
                                 @error('announcement_desc') <span class="text-red-500 error-message">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-span-4 mt-2 sm:col-span-2">
-                                <label class="block text-sm font-medium text-gray-900 dark:text-neutral-300 required">ปักหมุด</label>
+                                <label class="block text-sm font-medium text-gray-900 dark:text-neutral-300">ปักหมุด</label>
                                 <div class="checkbox-rect">
                                     <input type="checkbox" id="checkbox-rect" wire:model="flag" value="1" name="check">
                                     <label for="checkbox-rect"></label>
