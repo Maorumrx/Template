@@ -2,9 +2,10 @@
     <h3 class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">ข่าวสารและกิจกรรม</h3>
     <div class="overflow-hidden bg-white dark:bg-gray-700 sm:rounded-lg ">
         {{-- <x-jet-welcome /> --}}
-        <div class="relative overflow-x-auto">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        
+        <div class="relative h-48 overflow-x-auto bg-white md:overflow-scroll max-w-screen scrollbar-hide dark:bg-neutral-900">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
                     <tr>
                         <th scope="col" class="px-4 py-3 text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -23,9 +24,9 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tbody class="bt-4">
                     @forelse ($announcement as $item)
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <td scope="row" class="w-20 px-2 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">
                             @if ($item->flag == 0)
                                 
@@ -50,12 +51,14 @@
                             </button>
                             {{-- {{$item->announcement_desc ?? ''}} --}}
                         </td>
+                    </tr>
                     @empty
-                        <td colspan="3" class="px-6 py-4 ">
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <td colspan="3" class="px-6 py-4 text-center">
                             ไม่พบข้อมูล
                         </td>
-                    @endforelse
                     </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
