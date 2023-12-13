@@ -17,8 +17,8 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('หน้าหลัก') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('announcement') }}" :active="request()->routeIs('announcement')">
-                        {{ __('ข่าวสารและกิจกรรม') }}
+                    <x-jet-nav-link href="{{ route('the-order') }}" :active="request()->routeIs('the-order')">
+                        {{ __('เปิดร้าน') }}
                     </x-jet-nav-link>
                     {{-- <x-jet-nav-link href="{{ route('tableline') }}" :active="request()->routeIs('tableline')">
                         {{ __('Table Line') }}

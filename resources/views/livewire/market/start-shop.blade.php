@@ -13,9 +13,7 @@
                     <div>
                         {{-- Right --}}
                         {{-- Action Button --}}
-                        @if(!$isForm)
-                            <x-create-buttons />
-                        @else
+                        @if($isForm)
                             <x-action-buttons />
                         @endif
                         {{-- Action Button --}}
@@ -26,23 +24,37 @@
                 <div x-data="{ open: false }">
                     <div x-show="!$wire.isForm" style="@if($isForm) display: none; @endif">
                         {{-- Datatables --}}
-                        <livewire:tables.announcementdatatable />
+                       
+                        <div class="flex justify-between w-full pb-2 flex-nowrap">
+                            <div>
+                                {{-- Left --}}
+                            </div>
+                            <div class="rounded-lg justify-items-center">
+                                {{-- Center --}}
+                                <div class="flex items-center justify-center mb-2">
+                                    <x-open-buttons-1 />
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <x-open-buttons-2 />
+                                </div>
+                            </div>
+                            <div>
+                                {{-- Right --}}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div x-data="{ open: false }">
                     <div x-show="$wire.isForm" style="@if(!$isForm) display: none; @endif">
                         {{-- Form --}}
-                        @include('livewire.master-data.announcement._form')
+                        @include('livewire.market._form')
                     </div>
                 </div>
-
-                {{--
-            </div> --}}
-            {{-- </div> --}}
     </div>
 </div>
 @push('scripts')
 <script>
+
 </script>
 @endpush

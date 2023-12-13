@@ -5,6 +5,7 @@ use App\Http\Livewire\MasterData\Tableline;
 use App\Http\Livewire\MasterData\Announcement;
 use App\Http\Livewire\Dashboard\Dashboard;
 use App\Http\Controllers\Homecontroller;
+use App\Http\Livewire\Market\StartShop;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('tableline', Tableline::class)->middleware('auth')->name('tableline');
     Route::get('announcement', Announcement::class)->middleware('auth')->name('announcement');
+    Route::get('the-order', StartShop::class)->middleware('auth')->name('the-order');
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
