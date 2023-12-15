@@ -33,6 +33,6 @@ class BasicStateMachine extends StateMachine
 
     public function defaultState(): ?string
     {
-        return 'รอการจัดรถ';
+        return 'รอดำเนินการ';
     }
 }

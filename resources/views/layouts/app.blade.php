@@ -9,7 +9,8 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <link rel="icon" href="{{asset('img/chef-favicon.png')}}">
+        
         <!-- Scripts -->
         @vite(['resources/css/app.css','resources/css/custom.css', 'resources/js/app.js'])
 

@@ -26,11 +26,11 @@ class StartShop extends Component
     $isEdit,$showtable,$header_text,$delete_id,$audits;
 
     // Order
-    public $order, $order_id, $order_type, $bu_tb_code, $due_date, $receive_qty, $remain,
-    $qty, $total_sales, $state, $created_by;
+    public $order, $order_id, $order_type, $bu_tb_code, $due_date, $investment,
+    $receive_qty, $remain, $qty = 0, $total_all = 0, $total_sales = 0, $state, $created_by;
 
     // Rule
-    public $rules, $messages ;
+    public $receive_rules, $remain_rules, $messages ;
 
     public $editid,$action;
     protected $listeners = ['edit','openDeleteModal'];
@@ -39,31 +39,26 @@ class StartShop extends Component
     public function __construct()
     {
         parent::__construct();
-        // dd();
-        $this->rules = [
-            'announcement_header' => 'required',
-            'announcement_desc' => 'required',
+        
+        $this->receive_rules = [
+            'investment' => 'required',
+            'receive_qty' => 'required',
+        ];
+
+        $this->remain_rules = [
+            'remain' => 'required',
         ];
 
         $this->messages = [
-            // 'emp_code.unique' => 'มีรหัสนี้ในระบบแล้ว',
-            'announcement_header.required' => 'กรุณาระบุหัวข้อ',
-            'announcement_desc.required' => 'กรุณาระบุรายละเอียด',
+            'investment.required' => 'กรุณาระบุ',
+            'receive_qty.required' => 'กรุณาระบุ',
+            'remain.required' => 'กรุณาระบุ',
         ];
     }
 
     public function mount()
     {   
-        $order = Order::whereIn('state',['OPEN'])
-            ->whereIn('order_type',['LOOKCHIN', 'MOOKRATA'])
-            ->where('created_by',auth::user()->id)
-            ->orderBy('order_id','DESC')
-            ->first();
-            
-        if($order){
-            $this->isEdit();
-        }
-        $this->header_text = "";
+        $this->header_text = null;
         if($this->editid){
             $this->edit($this->editid);
         }
@@ -76,10 +71,21 @@ class StartShop extends Component
 
     public function create($value)
     {
-        $this->order_type = $value;
-        $this->isCreate();
-        $this->resetInputFields();
-        $this->resetValidation();
+        $order = Order::where('order_type',$value)
+            ->where('created_by',auth::user()->id)
+            ->whereIn('state',['เปิดร้าน'])
+            ->orderBy('order_id','DESC')
+            ->first();
+
+        if($order){
+            $this->editid = $order->order_id;
+            return redirect()->to('/the-order?editid='.$this->editid);
+        }else{
+            $this->isCreate();
+            $this->resetInputFields();
+            $this->resetValidation();
+            $this->order_type = $value;
+        }
     }
 
     public function isCreate()
@@ -115,16 +121,21 @@ class StartShop extends Component
         $this->order_type = null;
         $this->bu_tb_code = null;
         $this->due_date = null;
-        $this->receive_qty = 0;
-        $this->remain = 0;
+        $this->investment = null;
+        $this->receive_qty = null;
+        $this->remain = null;
         $this->qty = 0;
+        $this->total_all = 0;
         $this->total_sales = 0;
         $this->state = null;
+        $this->created_by = null;
+        $this->editid = null;
     }
+
     public function store()
     {
         DB::beginTransaction();
-        $this->validate($this->rules);
+        $this->validate($this->receive_rules);
         try {
             //code...
             $stmt = Order::updateOrCreate([
@@ -132,14 +143,19 @@ class StartShop extends Component
             ], 
             [
                 'order_type' => $this->order_type,
-                'due_date' => Carbon::now(),
-                'announcement_desc' => $this->announcement_desc,
+                'due_date' => null,
+                'investment' => $this->investment,
+                'receive_qty' => $this->receive_qty,
+                'remain' => $this->remain,
+                'qty' => $this->qty,
+                'total_sales' => $this->total_sales,
                 'created_by' => auth::user()->id,
-                'active' => $this->active,
             ]);
             $stmt->save();
+            $stmt->state()->transitionTo('เปิดร้าน');
+            $id = $stmt->order_id;
             DB::commit();
-            // $this->edit($id);
+            return redirect()->to('/the-order?editid='.$id);
             toastr()->success('Data has been saved successfully!', 'Congrats');
         } catch (\Throwable $th) {
             //throw $th;
@@ -147,5 +163,76 @@ class StartShop extends Component
             DB::rollBack();
         }
         
+    }
+    
+    public function edit($id)
+    {
+        $this->editid = $id;
+        $this->resetValidation();
+        $stmt = Order::findOrFail($id);
+        $this->order_id = $id;
+        $this->order_type = $stmt->order_type;
+        $this->due_date = $stmt->due_date;
+        $this->investment = $stmt->investment;
+        $this->receive_qty = $stmt->receive_qty;
+        $this->remain = $stmt->remain;
+        $this->qty = $stmt->qty;
+        $this->total_sales = $stmt->total_sales;
+        $this->created_by = $stmt->created_by;
+        $this->state = $stmt->state;
+        $this->total_all = $stmt->investment + $stmt->total_sales;
+
+        $this->isEdit();
+    }
+
+    public function updatedRemain($value)
+    {
+        $price = 10;
+        $amount = 0;
+        if ($value) {
+            # code...
+            $remain = (int)$value;
+            if ($remain <= $this->receive_qty) {
+                $amount = $this->receive_qty - $remain;
+                $this->qty = $amount;
+                $this->total_sales = $this->qty * $price;
+                $this->total_all = $this->investment + $this->total_sales;
+            }else{
+                toastr()->error('เกิดข้อผิดพลาดจำนวน "คงเหลือ" มากกว่าจำนวน "รับเข้า" ', 'Error');
+                return;
+            }
+        }
+        return;
+    }
+
+    public function close($value)
+    {
+        DB::beginTransaction();
+        $this->validate($this->remain_rules);
+        try {
+            //code...
+            $stmt = Order::updateOrCreate([
+                'order_id' => $value,
+            ], 
+            [
+                'order_type' => $this->order_type,
+                'due_date' => Carbon::now(),
+                'investment' => $this->investment,
+                'receive_qty' => $this->receive_qty,
+                'remain' => $this->remain,
+                'qty' => $this->qty,
+                'total_sales' => $this->total_sales,
+            ]);
+            $stmt->save();
+            $stmt->state()->transitionTo('ปิดร้าน');
+            $id = $stmt->order_id;
+            DB::commit();
+            return redirect()->to('/the-order?editid='.$id);
+            toastr()->success('Data has been saved successfully!', 'Congrats');
+        } catch (\Throwable $th) {
+            //throw $th;
+            toastr()->error($th .'Oops! Something went wrong!');
+            DB::rollBack();
+        }
     }
 }
