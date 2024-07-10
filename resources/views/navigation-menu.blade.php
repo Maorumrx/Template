@@ -5,10 +5,9 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
-                    {{-- <a href="{{ route('dashboard') }}"> --}}
-                        {{-- <x-jet-application-mark class="block w-auto h-9" /> --}}
-                        <img class="w-10 h-10" src="data:image/png;base64,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">
-                    {{-- </a> --}}
+                    <a href="{{ route('dashboard') }}">
+                        <x-jet-application-mark class="block w-auto h-9" />
+                    </a>
                     
                 </div>
                 
@@ -208,8 +207,8 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('หน้าหลัก') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('announcement') }}" :active="request()->routeIs('announcement')">
-                {{ __('ข่าวสารและกิจกรรม') }}
+            <x-jet-responsive-nav-link href="{{ route('the-order') }}" :active="request()->routeIs('the-order')">
+                {{ __('เปิดร้าน') }}
             </x-jet-responsive-nav-link>
         </div>
 
@@ -233,7 +232,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('โปรไฟล์ผู้ใช้งาน') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -248,7 +247,7 @@
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('ออกจากระบบ') }}
                     </x-jet-responsive-nav-link>
                 </form>
 

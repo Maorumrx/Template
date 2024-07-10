@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id('order_id');
-            $table->bigInteger('order_type')->nullable();
+            $table->string('order_type')->nullable();
             $table->bigInteger('bu_tb_code')->nullable();
             $table->date('due_date')->nullable();
-            $table->bigInteger('receive_qty')->default(0);
-            $table->bigInteger('remain')->default(0);
+            $table->bigInteger('investment')->nullable();
+            $table->bigInteger('receive_qty')->nullable();
+            $table->bigInteger('remain')->nullable();
             $table->bigInteger('qty')->default(0);
             $table->bigInteger('total_sales')->default(0);
             $table->bigInteger('created_by')->nullable();
