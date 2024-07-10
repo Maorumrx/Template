@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "asantibanez/laravel-eloquent-state-machines": "^5.1",
         "guzzlehttp/guzzle": "^7.2",
+        "kreait/laravel-firebase": "^5.5",
         "laravel/framework": "^9.19",
         "laravel/jetstream": "^2.14",
         "laravel/sanctum": "^3.0",
