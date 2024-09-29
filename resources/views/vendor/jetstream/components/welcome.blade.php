@@ -1,7 +1,19 @@
+
 <div class="p-6 bg-white border-b border-gray-200 sm:px-20 dark:bg-neutral-800 dark:border-neutral-600">
     <div class="mt-8 text-2xl dark:text-neutral-300">
         {{-- LOGO --}}
         {{-- <x-jet-application-logo class="block w-auto h-12 dark:text-neutral-300" /> --}}
+        <h2 class="w3-center">Manual Slideshow</h2>
+
+        <div class="w3-content w3-display-container">
+            <img class="mySlides" src="img_snowtops.jpg" style="width:100%">
+            <img class="mySlides" src="img_lights.jpg" style="width:100%">
+            <img class="mySlides" src="img_mountains.jpg" style="width:100%">
+            <img class="mySlides" src="img_forest.jpg" style="width:100%">
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
     </div>
 
     <div class="mt-8 text-2xl dark:text-neutral-300">
@@ -100,3 +112,22 @@
         </div>
     </div>
 </div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>

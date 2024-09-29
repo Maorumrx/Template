@@ -45,7 +45,7 @@
                                     </svg>
                                 </td>
                                 <td class="px-6 py-4">
-                                    Sliver
+                                    Sliver ss
                                 </td>
                                 <td class="px-6 py-4">
                                     Laptop
