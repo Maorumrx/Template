@@ -1,19 +1,40 @@
-<div class="p-6 bg-white border-b border-gray-200 sm:px-20 dark:bg-neutral-800 dark:border-yellow-600">
+<div class=" p-6 bg-white border-b border-gray-200 sm:px-20 dark:bg-neutral-800 dark:border-yellow-600">
     <div class="mt-8 text-2xl dark:text-neutral-300">
         {{-- LOGO --}}
         {{-- <x-jet-application-logo class="block w-auto h-12 dark:text-neutral-300" /> --}}
-        <h2 class="w3-center">Manual Slideshow</h2>
-
-        <div class="w3-content w3-display-container">
-            <img class="mySlides" src="img_snowtops.jpg" style="width:100%">
-            <img class="mySlides" src="img_lights.jpg" style="width:100%">
-            <img class="mySlides" src="img_mountains.jpg" style="width:100%">
-            <img class="mySlides" src="img_forest.jpg" style="width:100%">
-
-            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        {{-- <h2 class="w3-center">Manual Slideshow</h2> --}}
+        
+    {{-- <span id="heading">Simple automatic slider</span> --}}
+    <div id="slider">  
+        <div class="slides">  
+            <img src="{{asset('img/walk_1.jfif')}}" width="100%" class="h-96 object-cover object-center" />
+        </div>
+    
+        <div class="slides">  
+            <img src="{{asset('img/walk_2.jfif')}}" width="100%" class="h-96 object-cover object-center"/>
+        </div>
+    
+        <div class="slides">  
+            <img src="{{asset('img/walk_3.jfif')}}" width="100%" class="h-96 object-cover object-center"/>
+        </div> 
+    
+        <div class="slides">  
+            <img src="{{asset('img/walk_4.jfif')}}" width="100%" class="h-96 object-cover object-center"/>
+        </div> 
+    
+        <div class="slides">  
+            <img src="{{asset('img/walk_5.jfif')}}" width="100%" class="h-96 object-cover object-center"/>
+        </div>  
+    
+        <div id="dot">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </div>
+
 
     <div class="mt-8 text-2xl dark:text-neutral-300">
         {{-- Welcome to your Jetstream application! --}}
@@ -155,23 +176,35 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+    var index = 0;
+    var slides = document.querySelectorAll(".slides");
+    var dot = document.querySelectorAll(".dot");
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+    function changeSlide(){
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
+    if(index<0){
+        index = slides.length-1;
+    }
+    
+    if(index>slides.length-1){
+        index = 0;
+    }
+    
+    for(let i=0;i<slides.length;i++){
+        slides[i].style.display = "none";
+        dot[i].classList.remove("active");
+    }
+    
+    slides[index].style.display= "block";
+    dot[index].classList.add("active");
+    
+    index++;
+    
+    setTimeout(changeSlide,2000);
+    
+    }
+
+    changeSlide();
+</script> 

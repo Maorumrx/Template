@@ -3,9 +3,9 @@
     <div class="overflow-hidden bg-white dark:bg-gray-700 sm:rounded-lg ">
         {{-- <x-jet-welcome /> --}}
         
-        <div class="relative h-48 overflow-x-auto bg-white md:overflow-scroll max-w-screen scrollbar-hide dark:bg-neutral-900">
+        <div class="relative h-96 overflow-x-auto bg-white md:overflow-scroll max-w-screen scrollbar-hide dark:bg-neutral-900">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
+                <thead class="stick top-0 text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
                     <tr>
                         <th scope="col" class="px-4 py-3 text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -15,6 +15,9 @@
                                     d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
                             </svg>
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Image
                         </th>
                         <th scope="col" class="px-6 py-3">
                             หัวข้อ
@@ -38,6 +41,16 @@
                                         clip-rule="evenodd" />
                                 </svg>
                             @endif
+                        </td>
+                        
+                        <td class="px-6 py-4">
+                            @php
+                                
+                            @endphp
+                            {{-- @if ($fileName != '') --}}
+                                {{-- <img src="{{asset("$filename")}}" alt="" class="h-24 w-24 rounded-full object-cover text-center object-center"> --}}
+                            {{-- @endif --}}
+                            
                         </td>
                         <td class="px-6 py-4">
                             {{$item->announcement_header ?? ''}}

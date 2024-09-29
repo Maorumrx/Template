@@ -29,24 +29,40 @@
                 /* color: #000000; */
             }
             .mySlides {display:none;}
+            .mystyle{
+                
+                /* position: fixed ; */
+                z-index: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                max-width: 100%;
+                max-height: 100%;
+                margin-top: auto;
+                overflow: auto;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url("../img/walk_5.jfif");
+            }
         </style>
     </head>
-    <body class="" x-data="{ darkMode: false }" x-init="
+    <body class="" x-data="{ darkMode: false }" x-init=" 
     if (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       localStorage.setItem('darkMode', JSON.stringify(true));
     }
     darkMode = JSON.parse(localStorage.getItem('darkMode'));
     $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" x-cloak>
-        <div x-bind:class="{'dark' : darkMode === true}" class="min-h-screen bg-gray-100">
+        <div x-bind:class="{'dark' : darkMode === true}" class="min-h-screen bg-gray-100 " >
             {{-- <x-jet-banner /> --}}
-
-            <div class="min-h-screen bg-gray-100 dark:bg-neutral-900">
+            <div class="min-h-screen  dark:bg-neutral-900 ">
                 @livewire('navigation-menu')
 
                 <!-- Page Heading -->
                 @if (isset($header))
-                    <header class="bg-white shadow dark:bg-neutral-900">
-                        <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    <header class="bg-white shadow dark:bg-neutral-900 ">
+                        <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8 ">
                             {{ $header }}
                         </div>
                     </header>
