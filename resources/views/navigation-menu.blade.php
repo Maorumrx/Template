@@ -20,9 +20,9 @@
                     <x-jet-nav-link href="{{ route('announcement') }}" :active="request()->routeIs('announcement')">
                         {{ __('ข่าวสารและกิจกรรม') }}
                     </x-jet-nav-link>
-                    {{-- <x-jet-nav-link href="{{ route('tableline') }}" :active="request()->routeIs('tableline')">
-                        {{ __('Table Line') }}
-                    </x-jet-nav-link> --}}
+                    <x-jet-nav-link href="{{ route('presentation') }}" :active="request()->routeIs('presentation')">
+                        {{ __('ภาพตัวอย่าง') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 

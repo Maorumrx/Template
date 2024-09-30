@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\MasterData\Tableline;
 use App\Http\Livewire\MasterData\Announcement;
+use App\Http\Livewire\MasterData\Presentation;
 use App\Http\Livewire\Dashboard\Dashboard;
 use App\Http\Controllers\Homecontroller;
 
@@ -24,6 +25,7 @@ Route::get('/', function () {
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
 Route::get('/directory', [Dashboard::class, 'directory'])->name('directory');
 Route::get('announce_file/{key}', [Homecontroller::class, 'announcement'])->name('announce_file');
+Route::get('presentation_file/{key}', [Homecontroller::class, 'presentation'])->name('presentation_file');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -31,6 +33,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('tableline', Tableline::class)->middleware('auth')->name('tableline');
     Route::get('announcement', Announcement::class)->middleware('auth')->name('announcement');
+    Route::get('presentation', Presentation::class)->middleware('auth')->name('presentation');
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');

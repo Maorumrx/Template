@@ -43,7 +43,7 @@ class Dashboard extends Component
             ->orderby('flag','desc')
             ->orderby('created_at','desc')
             ->get();
-        $this->Image_gallery = Attachment::where('object_type', 'ANNOUNCEMENT')->orderby('file_type', 'desc')->get();
+        $this->Image_gallery = Attachment::where('object_type', 'PRESENTATION')->whereIn('file_type',['png','jpg'])->orderby('file_type', 'desc')->limit(5)->get()->toArray();
 
     }
 

@@ -26,7 +26,7 @@
                 <div x-data="{ open: false }">
                     <div x-show="!$wire.isForm" style="@if($isForm) display: none; @endif">
                         {{-- Announce --}}
-                        <x-jet-welcome />
+                        <x-jet-welcome :galleries="$Image_gallery"/>
                         
                         <div class="pt-5">
                             @include('livewire.dashboard._announce')

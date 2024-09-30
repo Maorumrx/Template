@@ -6,11 +6,22 @@
         
     {{-- <span id="heading">Simple automatic slider</span> --}}
     <div id="slider">  
-        <div class="slides">  
-            <img src="{{asset('img/walk_1.jfif')}}" width="100%" class="h-96 object-cover object-center" />
-        </div>
+            {{-- {{dd($galleries)}} --}}
+        @foreach ($galleries as $item)
+            {{-- {{dd($galleries)}} --}}
+                {{-- @if ($item['file_type'] == 'png') --}}
+                @php
+                    $file_name = $item['file_name'];
+                    // dd($item);
+                @endphp
+                    <div class="slides">  
+                        <img src="{{asset("presentation_file/$file_name")}}" width="100%" class="h-96 object-cover object-center" />
+                    </div>
+                {{-- @endif --}}
+        @endforeach
+        
     
-        <div class="slides">  
+        {{-- <div class="slides">  
             <img src="{{asset('img/walk_2.jfif')}}" width="100%" class="h-96 object-cover object-center"/>
         </div>
     
@@ -24,7 +35,7 @@
     
         <div class="slides">  
             <img src="{{asset('img/walk_5.jfif')}}" width="100%" class="h-96 object-cover object-center"/>
-        </div>  
+        </div>   --}}
     
         <div id="dot">
             <span class="dot"></span>
