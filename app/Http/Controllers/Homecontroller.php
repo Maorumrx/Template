@@ -42,4 +42,17 @@ class Homecontroller extends Controller
         $responese->header('content-type', $type);
         return $responese;
     }
+
+    public function moralize($filename)
+    {
+        $path = Storage::path('moralize/' . $filename);
+        if (!File::exists($path)) {
+            abort(404);
+        }
+        $file = File::get($path);
+        $type = File::mimeType($path);
+        $responese = Response::make($file, 200);
+        $responese->header('content-type', $type);
+        return $responese;
+    }
 }

@@ -32,8 +32,8 @@
                             @include('livewire.dashboard._announce')
                         </div>
                         
-                        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 pt-5">
-                            <h3 id="directory" class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">พระลูกวัด</h3>
+                        <div class="mx-auto mt-5 max-w-7xl sm:p-6 lg:p-8 p-5 bg-orange-100 rounded-md dark:bg-teal-900">
+                            <span id="directory" class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">พระลูกวัด</span>
 
                             {{-- ภาพชุดที่ 1-3 --}}
                                 <div class="grid grid-cols-3 gap-4 place-items-center">
@@ -48,13 +48,13 @@
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-3 gap-4">
-                                    <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                    <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         หลวงตาใช้หรือหลวงตาหนิด
                                     </div>
-                                    <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                    <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         พระนาวินหรือพระหมึก
                                     </div>
-                                    <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                    <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         พระธีรพงศ์หรือพระแมน
                                     </div>
                                 </div>
@@ -73,13 +73,13 @@
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-3 gap-4 ">
-                                    <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                    <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         พระพงศธรหรือพระใหญ่
                                     </div>
-                                    <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                    <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         พระวชิรญาโณหรือพระต้อม
                                     </div>
-                                    <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                    <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         พระทิวาหรือพระดิว
                                     </div>
                                 </div>
@@ -98,13 +98,13 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-3 gap-4 ">
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระชัยยาหรือพระน้อย
                                 </div>
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระอธิยุตหรือพระต่วย
                                 </div>
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระวันชนะหรือพระต่อ
                                 </div>
                             </div>
@@ -123,13 +123,13 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-3 gap-4 ">
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระสราวุฒิหรือพระวุฒิ
                                 </div>
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระวัชรพงศ์หรือพระเต้ย
                                 </div>
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระสาครหรือพระเคน
                                 </div>
                             </div>
@@ -148,13 +148,13 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-3 gap-4 ">
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระธวัชชัยหรือพระเชท
                                 </div>
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระศิริวัฒน์หรือพระโบ๊ท
                                 </div>
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระเทวาหรือพระเเคน
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-3 gap-4 ">
-                                <div class="mt-2 text-center text-sm text-gray-500 dark:text-neutral-400">
+                                <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     สามเณรรัฐมนตรีหรือเณรคิง
                                 </div>
                             </div>

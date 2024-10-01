@@ -99,3 +99,74 @@ img{
       background-color: #3949ab;
       background-image: url("../img/walk_5.jfif");
   }
+
+/* tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  /* width: 120px; */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  /* padding: 5px 0; */
+  position: absolute;
+  /* z-index: 1; */
+  /* bottom: 150%; */
+  /* left: 50%; */
+  /* margin-left: -60px; */
+}
+
+.tooltip .tooltiptext::after {
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+/* 2 */
+
+.tooltip-container {
+position: relative ;
+display: inline-block;
+}
+
+.text-tooltip::after {
+content: attr(data-text);
+position: absolute;
+width: 100%;
+top: 100%;
+left: 50%;
+transform: translateX(-50%);
+background-color: #000;
+color: #fff;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: black transparent transparent transparent;
+padding: 5px 10px;
+border-radius: 10px;
+white-space: normal;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+z-index: 0;
+}
+
+.text-tooltip:hover::after {
+opacity: 1;
+visibility: visible;
+z-index: 2;
+}

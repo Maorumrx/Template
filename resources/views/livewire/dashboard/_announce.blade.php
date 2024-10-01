@@ -1,11 +1,11 @@
-<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <h3 class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">ข่าวสารและกิจกรรม</h3>
-    <div class="overflow-hidden bg-white dark:bg-gray-700 sm:rounded-lg ">
+<div class="mx-auto max-w-7xl sm:p-6 lg:p-8 bg-orange-100 dark:bg-teal-900 rounded-md border-b-4 border-yellow-400">
+    <span class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">ข่าวสารและกิจกรรม</span>
+    <div class="overflow-hidden bg-orange-50 dark:bg-gray-700 sm:rounded-lg ">
         {{-- <x-jet-welcome /> --}}
         
-        <div class="relative h-96 overflow-x-auto bg-white md:overflow-scroll max-w-screen scrollbar-hide dark:bg-neutral-900">
+        <div class="relative h-96 overflow-x-auto bg-orange-50 md:overflow-scroll max-w-screen scrollbar-hide dark:bg-neutral-900">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
-                <thead class="stick top-0 text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
+                <thead class="stick top-0 text-xs text-gray-700 uppercase bg-orange-300 dark:bg-gray-700 dark:text-gray-400 ">
                     <tr>
                         <th scope="col" class="px-4 py-3 text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -29,7 +29,7 @@
                 </thead>
                 <tbody class="bt-4">
                     @forelse ($announcement as $item)
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-orange-200 border-b dark:bg-gray-800 dark:border-gray-700">
                         <td scope="row" class="w-20 px-2 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">
                             @if ($item->flag == 0)
                                 

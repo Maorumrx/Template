@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\MasterData\Tableline;
 use App\Http\Livewire\MasterData\Announcement;
 use App\Http\Livewire\MasterData\Presentation;
+use App\Http\Livewire\MasterData\Moralize;
 use App\Http\Livewire\Dashboard\Dashboard;
+use App\Http\Livewire\Moralize\MoralizeView;
+use App\Http\Livewire\Prayer\PrayerView;
 use App\Http\Controllers\Homecontroller;
 
 /*
@@ -22,10 +25,17 @@ Route::get('/', function () {
     return redirect('dashboard');
 });
 
+Route::get('prayer', function () {
+    return redirect('prayer');
+});
+
+Route::get('/prayer', PrayerView::class)->name('prayer');
+Route::get('/moralize', MoralizeView::class)->name('moralize');
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
 Route::get('/directory', [Dashboard::class, 'directory'])->name('directory');
 Route::get('announce_file/{key}', [Homecontroller::class, 'announcement'])->name('announce_file');
 Route::get('presentation_file/{key}', [Homecontroller::class, 'presentation'])->name('presentation_file');
+Route::get('moralize_file/{key}', [Homecontroller::class, 'moralize'])->name('moralize_file');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -34,6 +44,7 @@ Route::middleware([
     Route::get('tableline', Tableline::class)->middleware('auth')->name('tableline');
     Route::get('announcement', Announcement::class)->middleware('auth')->name('announcement');
     Route::get('presentation', Presentation::class)->middleware('auth')->name('presentation');
+    Route::get('md-moralize', Moralize::class)->middleware('auth')->name('md-moralize');
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
