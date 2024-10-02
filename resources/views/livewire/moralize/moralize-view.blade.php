@@ -22,20 +22,10 @@
                                                 </video>
                                             </div>
                                         </div>
-                                        <div class="p-4 text-2xl flex items-start justify-start ">
-                                            <span class="flex-warp text-neutral-700 dark:text-white font-extrabold">{{ $item->moralize_name }}</span>
+                                        <div class="p-4 text-xl flex items-start justify-start ">
+                                            <span class="flex-warp text-neutral-700 dark:text-white font-bold">{{ $item->moralize_name }}</span>
                                         </div>
-                                        <div class="p-4 text-xl flex items-start justify-start h-32">
-                                            {{-- @if (mb_strlen($item->moralize_desc) > 50)
-                                                @php
-                                                    $truncatedText = mb_substr($item->moralize_desc,0,50). '...';
-                                                @endphp
-                                                <div class="tooltip-container">
-                                                    <span data-text="{{ $item->moralize_desc }}" class="text-tooltip flex-warp text-neutral-700 dark:text-white">
-                                                        {{ $truncatedText }}
-                                                    </span>
-                                                </div>
-                                            @else --}}
+                                        <div class="p-4 text-base flex items-start justify-start h-32">
                                                 <span class="flex-warp text-neutral-700 dark:text-white">
                                                     {{ $item->moralize_desc }}
                                                 

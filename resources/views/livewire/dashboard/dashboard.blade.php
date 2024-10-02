@@ -4,7 +4,7 @@
             <div>
                 {{-- Left --}}
                 @if($isForm)
-                    <h3 class=" px-4 py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">วัดโนนสำราญ</h3>
+                    <span class=" px-4 py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">วัดโนนสำราญ</span>
                 @endif
             </div>
             <div>
@@ -63,7 +63,7 @@
                             
                             @if ($item->file_type == 'mp4')
                                 {{-- <div class=" rounded-xl overflow-auto  p-8"> --}}
-                                    <div class="lg:w-1/4 w-full m-5 overflow-auto flex items-center justify-center flex-col rounded-lg font-mono text-white text-sm font-bold bg-orange-200 dark:bg-gray-700 shadow-lg">
+                                    <div class="lg:w-1/4 w-full m-5 overflow-auto flex items-center justify-center flex-col rounded-lg text-white text-sm font-bold bg-orange-200 dark:bg-gray-700 shadow-lg">
                                         <div class="p-4 w-full flex items-center justify-center  dark:bg-gray-700">
                                             <div class="w-full p-1 md:p-2">
                                                 <video controls class="block object-cover object-center w-full h-60 rounded-lg" >
@@ -71,10 +71,10 @@
                                                 </video>
                                             </div>
                                         </div>
-                                        <div class="p-4 text-2xl flex items-start justify-start ">
-                                            <span class="flex-warp text-neutral-700 dark:text-white font-extrabold">{{ $item->moralize_name }}</span>
+                                        <div class="p-4 text-xl flex items-start justify-start ">
+                                            <span class="flex-warp text-neutral-700 dark:text-white font-bold">{{ $item->moralize_name }}</span>
                                         </div>
-                                        <div class="p-4 text-xl flex items-start justify-start h-32">
+                                        <div class="p-4 text-base flex items-start justify-start h-32">
                                                 <span class="flex-warp text-neutral-700 dark:text-white">
                                                     {{ $item->moralize_desc }}
                                                 
@@ -119,30 +119,30 @@
                                 <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                                     <h2 class="sr-only">-</h2>
 
-                                    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                                    <div class="grid grid-cols-1 text-center font-bold gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                                         <a href="{{asset('document/pdf/คาถาชินบัญชร.pdf')}}" target="_blank" class="group">
                                             <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                                                 <img src="{{asset('document/img/ชินบัญชร.jpg')}}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                             </div>
-                                            <h3 class="mt-4 text-lg text-gray-700 dark:text-gray-100">ชินบันชร พร้อมคำแปล</h3>
+                                            <span class="mt-4 text-lg text-gray-700  dark:text-gray-100">ชินบันชร พร้อมคำแปล</span>
                                         </a>
                                         <a href="{{asset('document/pdf/บทสวดถวายพรพระ.pdf')}}" target="_blank" class="group">
                                             <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                                                 <img src="{{asset('document/img/บทถวายพรพระ.jpg')}}" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                             </div>
-                                            <h3 class="mt-4 text-lg text-gray-700 dark:text-gray-100">บทถวายพรพระ</h3>
+                                            <span class="mt-4 text-lg text-gray-700 dark:text-gray-100">บทถวายพรพระ</span>
                                         </a>
                                         <a href="{{asset('document/pdf/บทสวดทำวัตรเช้า-แปล.pdf')}}" target="_blank" class="group">
                                             <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                                                 <img src="{{asset('document/img/ทำวัตรเช้า.jpg')}}" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                             </div>
-                                            <h3 class="mt-4 text-lg text-gray-700 dark:text-gray-100">ทำวัตรเช้า-แปล</h3>
+                                            <span class="mt-4 text-lg text-gray-700 dark:text-gray-100">ทำวัตรเช้า-แปล</span>
                                         </a>
                                         <a href="{{asset('document/pdf/บทสวดทำวัตรเย็น-แปล.pdf')}}" target="_blank" class="group">
                                             <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                                                 <img src="{{asset('document/img/ทำวัตรเย็น.jpg')}}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                             </div>
-                                            <h3 class="mt-4 text-lg text-gray-700 dark:text-gray-100">ทำวัตรเย็น-แปล</h3>
+                                            <span class="mt-4 text-lg text-gray-700 dark:text-gray-100">ทำวัตรเย็น-แปล</span>
                                         </a>
                                         
                                     </div>
@@ -157,7 +157,7 @@
                             <div class="flex justify-between w-full pb-2 flex-nowrap">
                                 <div>
                                     {{-- Left --}}
-                                    <div class="flex flex-col mx-auto space-y-4 text-white font-bold leading-6 max-w-xs">
+                                    <div class="flex flex-col mx-auto space-y-4  dark:text-white font-bold leading-6 max-w-xs">
                                         <div class="rounded-lg flex items-center justify-start font-semibold  text-2xl">
                                             ติดต่อเรา
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-2 h-10 w-10">
