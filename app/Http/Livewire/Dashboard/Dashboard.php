@@ -6,6 +6,7 @@ use Livewire\Component;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Announcement;
 use App\Models\Attachment;
+use App\Models\Moralize;
 use Illuminate\Support\Carbon;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
@@ -39,10 +40,20 @@ class Dashboard extends Component
         $this->header_text = "";
         // $this->showtable = true;
         $this->announcement = Announcement::query()
-            ->where('active',1)
-            ->orderby('flag','desc')
-            ->orderby('created_at','desc')
+            ->with('attachment_img')
+            ->where('announcements.active',1)
+            ->orderby('announcements.flag','desc')
+            ->orderby('announcements.created_at','desc')
             ->get();
+        $this->gallery = Moralize::query()
+        ->leftjoin('attachments', function ($join) {
+            $join->on('moralizes.moralize_id', 'attachments.object_id')
+            ->where('attachments.object_type', 'MORALIZE')
+            ->where('attachments.deleted_at', null);
+        })
+        ->orderBy('moralizes.moralize_id', 'DESC')
+        ->limit(3)
+        ->get();
         $this->Image_gallery = Attachment::where('object_type', 'PRESENTATION')->whereIn('file_type',['png','jpg'])->orderby('file_type', 'desc')->limit(5)->get()->toArray();
 
     }

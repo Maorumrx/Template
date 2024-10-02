@@ -21,4 +21,10 @@ class Announcement extends Model implements Auditable
     {
         return $this->hasOne(Attachment::class, 'object_id', 'announcement_id');
     }
+
+    public function attachment_img()
+    {
+        return $this->hasOne(Attachment::class,'object_id', 'announcement_id')->where('object_type', 'ANNOUNCEMENT')->wherein('file_type',['jpg','png'])->whereNull('deleted_at');
+        // return $this->hasOne(Attachment::class, 'object_id', 'announcement_id');
+    }
 }

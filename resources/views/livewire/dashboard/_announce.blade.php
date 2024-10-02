@@ -1,11 +1,11 @@
-<div class="mx-auto max-w-7xl sm:p-6 lg:p-8 bg-orange-100 dark:bg-teal-900 rounded-md border-b-4 border-yellow-400">
+<div class="mx-auto max-w-7xl sm:p-6 lg:p-8 bg-orange-100 dark:bg-gray-800 rounded-md border-b-4 border-yellow-400">
     <span class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">ข่าวสารและกิจกรรม</span>
     <div class="overflow-hidden bg-orange-50 dark:bg-gray-700 sm:rounded-lg ">
         {{-- <x-jet-welcome /> --}}
         
         <div class="relative h-96 overflow-x-auto bg-orange-50 md:overflow-scroll max-w-screen scrollbar-hide dark:bg-neutral-900">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
-                <thead class="stick top-0 text-xs text-gray-700 uppercase bg-orange-300 dark:bg-gray-700 dark:text-gray-400 ">
+                <thead class="stick top-0 text-xs text-gray-800 uppercase bg-orange-300 dark:bg-gray-900 dark:text-gray-400 ">
                     <tr>
                         <th scope="col" class="px-4 py-3 text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -16,8 +16,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
                             </svg>
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Image
+                        <th scope="col" class="px-6 py-3 text-center">
+                            รูปภาพ
                         </th>
                         <th scope="col" class="px-6 py-3">
                             หัวข้อ
@@ -29,7 +29,7 @@
                 </thead>
                 <tbody class="bt-4">
                     @forelse ($announcement as $item)
-                    <tr class="bg-orange-200 border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-orange-200 border-b dark:bg-gray-700 dark:border-gray-600">
                         <td scope="row" class="w-20 px-2 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">
                             @if ($item->flag == 0)
                                 
@@ -42,15 +42,25 @@
                                 </svg>
                             @endif
                         </td>
-                        
-                        <td class="px-6 py-4">
+                         
+                        <td class="py-2">
                             @php
-                                
+                                $stmt = $item->attachment_img;
                             @endphp
-                            {{-- @if ($fileName != '') --}}
-                                {{-- <img src="{{asset("$filename")}}" alt="" class="h-24 w-24 rounded-full object-cover text-center object-center"> --}}
-                            {{-- @endif --}}
-                            
+                            <div class="flex justify-center font-mono text-white text-sm font-bold bg-stripes-blue rounded-lg">
+                                
+                                @if ($stmt)
+                                <div class="flex items-center justify-center">
+                                    @if ($stmt->file_type == 'png')
+                                        <img alt="gallery" class=" text-center object-cover object-center w-20 h-20 rounded-full transition duration-150 ease-out hover:scale-105 "
+                                        src="{{asset("announce_file/$stmt->file_name")}}">
+                                    @elseif(($stmt->file_type == 'jpg'))
+                                        <img alt="gallery" class=" text-center object-cover object-center w-20 h-20 rounded-full transition duration-150 ease-out hover:scale-105 "
+                                        src="{{asset("announce_file/$stmt->file_name")}}">
+                                    @endif
+                                </div>
+                                @endif
+                            </div>
                         </td>
                         <td class="px-6 py-4">
                             {{$item->announcement_header ?? ''}}
@@ -66,7 +76,7 @@
                         </td>
                     </tr>
                     @empty
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b dark:bg-gray-700 dark:border-gray-600">
                         <td colspan="3" class="px-6 py-4 text-center">
                             ไม่พบข้อมูล
                         </td>

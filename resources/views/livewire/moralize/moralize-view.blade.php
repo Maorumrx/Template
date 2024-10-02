@@ -14,8 +14,8 @@
                             
                             @if ($item->file_type == 'mp4')
                                 {{-- <div class=" rounded-xl overflow-auto  p-8"> --}}
-                                    <div class="lg:w-1/3 w-full m-5 overflow-auto flex items-center justify-center flex-col rounded-lg font-mono text-white text-sm font-bold bg-orange-200 dark:bg-neutral-500 shadow-lg">
-                                        <div class="p-4 w-full flex items-center justify-center  dark:bg-neutral-500">
+                                    <div class="lg:w-1/3 w-full m-5 overflow-auto flex items-center justify-center flex-col rounded-lg font-mono text-white text-sm font-bold bg-orange-200 dark:bg-gray-700 shadow-lg">
+                                        <div class="p-4 w-full flex items-center justify-center  dark:bg-gray-700">
                                             <div class="w-full p-1 md:p-2">
                                                 <video controls class="block object-cover object-center w-full h-60 rounded-lg" >
                                                     <source src="{{asset("moralize_file/$item->file_name")}}" type="video/mp4"/>
