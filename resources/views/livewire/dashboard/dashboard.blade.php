@@ -33,10 +33,10 @@
                         </div>
                         
                         <div class="mx-auto mt-5 max-w-7xl sm:p-6 lg:p-8 p-5 bg-orange-100 rounded-md dark:bg-teal-900">
-                            <span id="directory" class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300">พระลูกวัด</span>
+                            <span id="directory" class="py-2 text-2xl font-black leading-6 text-gray-900 dark:text-neutral-300"></span>
 
                             {{-- ภาพชุดที่ 1-3 --}}
-                                <div class="grid grid-cols-3 gap-4 place-items-center">
+                                {{-- <div class="grid grid-cols-3 gap-4 place-items-center">
                                     <div class="h-48 w-48 overflow-hidden rounded-full border border-gray-200">
                                         <img src="{{asset('img/ฟหก้ห้ดกดเ.jpg')}}" alt="" class="h-full w-full object-cover text-center object-center">
                                     </div>
@@ -57,11 +57,11 @@
                                     <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         พระธีรพงศ์หรือพระแมน
                                     </div>
-                                </div>
+                                </div> --}}
                             {{-- ภาพชุดที่ 1-3 --}}
 
                             {{-- ภาพชุดที่ 4-6 --}}
-                                <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
+                                {{-- <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
                                     <div class="h-48 w-48 overflow-hidden rounded-full border border-gray-200">
                                         <img src="{{asset('img/ฟหกด้-ๆพำไั.jpeg')}}" alt="" class="h-full w-full object-cover text-center object-center">
                                     </div>
@@ -82,11 +82,11 @@
                                     <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                         พระทิวาหรือพระดิว
                                     </div>
-                                </div>
+                                </div> --}}
                             {{-- ภาพชุดที่ 4-6 --}}
 
                             {{-- ภาพชุดที่ 7-9 --}}
-                            <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
+                            {{-- <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
                                 <div class="h-48 w-48 overflow-hidden rounded-full border border-gray-200">
                                     <img src="{{asset('img/หลวงพี่น้อย.jpeg')}}" alt="" class="h-full w-full object-cover text-center object-center">
                                 </div>
@@ -107,11 +107,11 @@
                                 <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระวันชนะหรือพระต่อ
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- ภาพชุดที่ 7-9 --}}
 
                             {{-- ภาพชุดที่ 7-9 --}}
-                            <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
+                            {{-- <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
                                 <div class="h-48 w-48 overflow-hidden rounded-full border border-gray-200">
                                     <img src="{{asset('img/หลวงพี่วุฒิ.jpg')}}" alt="" class="h-full w-full object-cover text-center object-center">
                                 </div>
@@ -132,11 +132,11 @@
                                 <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระสาครหรือพระเคน
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- ภาพชุดที่ 7-9 --}}
 
                              {{-- ภาพชุดที่ 10-12 --}}
-                             <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
+                             {{-- <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
                                 <div class="h-48 w-48 overflow-hidden rounded-full border border-gray-200">
                                     <img src="{{asset('img/หลวงเชท.jpeg')}}" alt="" class="h-full w-full object-cover text-center object-center">
                                 </div>
@@ -157,11 +157,11 @@
                                 <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     พระเทวาหรือพระเเคน
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- ภาพชุดที่ 10-12 --}}
 
                             {{-- ภาพชุดที่ 13 --}}
-                            <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
+                            {{-- <div class="grid grid-cols-3 gap-4 place-items-center mt-5">
                                 <div class="h-48 w-48 overflow-hidden rounded-full border border-gray-200">
                                     <img src="{{asset('img/เณรคิง.jpeg')}}" alt="" class="h-full w-full object-cover text-center object-center">
                                 </div>
@@ -170,7 +170,7 @@
                                 <div class="mt-2 text-center text-xl text-gray-500 dark:text-neutral-400">
                                     สามเณรรัฐมนตรีหรือเณรคิง
                                 </div>
-                            </div>
+                            </div> --}}
                             
                             {{-- ภาพชุดที่ 13 --}}
 

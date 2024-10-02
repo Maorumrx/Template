@@ -83,6 +83,7 @@
                             @elseif(($item->file_type == 'jpg'))
                                 <div class="flex flex-wrap w-1/3">
                                     <div class="w-full p-1 md:p-2">
+                                        <button class="p-4 mb-2 w-full text-center rounded-md bg-red-600 text-white transition duration-150 ease-out hover:scale-105" wire:click="delete_img({{$item->id}})">DELETE</button>
                                         <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg transition duration-150 ease-out hover:scale-105"
                                         src="{{asset("presentation_file/$item->file_name")}}">
                                     </div>

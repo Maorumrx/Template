@@ -1,6 +1,6 @@
 <div>
     <div class="py-12">
-        <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <section class="overflow-hidden text-gray-700 ">
                 <div class="container">
                     <div class="inline-flex items-center justify-center px-4 py-2 font-semibold rounded-md text-2xl dark:text-white w-full">
@@ -16,59 +16,56 @@
                             <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                                 <a href="{{asset('document/pdf/คาถาชินบัญชร.pdf')}}" target="_blank" class="group">
                                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                                        <img src="{{asset('document/img/ชินบัญชร.jfif')}}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                        <img src="{{asset('document/img/ชินบัญชร.jpg')}}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
-                                    <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
+                                    <h3 class="mt-4 text-lg text-gray-700">ชินบันชร พร้อมคำแปล</h3>
                                 </a>
-                                <a href="#" class="group">
+                                <a href="{{asset('document/pdf/บทสวดถวายพรพระ.pdf')}}" target="_blank" class="group">
                                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                        <img src="{{asset('document/img/บทถวายพรพระ.jpg')}}" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
-                                    <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
+                                    <h3 class="mt-4 text-lg text-gray-700">บทถวายพรพระ</h3>
                                 </a>
-                                <a href="#" class="group">
+                                <a href="{{asset('document/pdf/บทสวดทำวัตรเช้า-แปล.pdf')}}" target="_blank" class="group">
                                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                        <img src="{{asset('document/img/ทำวัตรเช้า.jpg')}}" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
-                                    <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
+                                    <h3 class="mt-4 text-lg text-gray-700">ทำวัตรเช้า-แปล</h3>
                                 </a>
-                                <a href="#" class="group">
+                                <a href="{{asset('document/pdf/บทสวดทำวัตรเย็น-แปล.pdf')}}" target="_blank" class="group">
                                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                        <img src="{{asset('document/img/ทำวัตรเย็น.jpg')}}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
-                                    <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
+                                    <h3 class="mt-4 text-lg text-gray-700">ทำวัตรเย็น-แปล</h3>
                                 </a>
-                                <a href="#" class="group">
+                                <a href="{{asset('document/pdf/ยอดพระกัณฑ์ไตรปิฎก.pdf')}}" target="_blank" class="group">
                                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                        <img src="{{asset('document/img/ยอดพระกัณฑ์ไตรปิฎก.jpg')}}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
-                                    <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
+                                    <h3 class="mt-4 text-lg text-gray-700">ยอดพระกัณฑ์ไตรปิฎก</h3>
+                                </a>
+                                <a href="{{asset('document/pdf/วิญญาณ 4.pdf')}}" target="_blank" class="group">
+                                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                                        <img src="{{asset('document/img/วิญญาณ 4 ระดับ.jpg')}}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                    </div>
+                                    <h3 class="mt-4 text-lg text-gray-700">วิญญาณ 4 ระดับ</h3>
+                                </a>
+                                <a href="{{asset('document/pdf/สกทาคามี.pdf')}}" target="_blank" class="group">
+                                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                                        <img src="{{asset('document/img/สกทาคามี.jpg')}}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                    </div>
+                                    <h3 class="mt-4 text-lg text-gray-700">สกทาคามี</h3>
+                                </a>
+                                <a href="{{asset('document/pdf/อนาคามี.pdf')}}" target="_blank" class="group">
+                                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                                        <img src="{{asset('document/img/อนาคามี.jpg')}}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                    </div>
+                                    <h3 class="mt-4 text-lg text-gray-700">อนาคามี</h3>
                                 </a>
                             <!-- More products... -->
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="grid grid-rows-4 grid-flow-col gap-4 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-yellow rounded-lg">
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">
-                            01
-                        </div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">02</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">03</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">04</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">05</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">06</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">07</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">08</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">09</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">10</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">11</div>
-                        <div class="p-4 rounded-lg shadow-lg bg-yellow-600">12</div>
-                    </div> --}}
                 </div>
             </section>
         </div>
